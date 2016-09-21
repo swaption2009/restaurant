@@ -1,4 +1,5 @@
 class RegistrationsController < Devise::RegistrationsController
+  module ApplicationHelper
 
   def create
     super
@@ -8,6 +9,10 @@ class RegistrationsController < Devise::RegistrationsController
 
   def after_sign_up_path_for(resource)
     setup_organization_path(:organization_setup)
+  end
+
+  def update_sanitized_params
+    devise_parameters_sanitizer.for(:sign_up) { |u| u.permit(:name, :organization, :email, :password, :password_confirmation, :plan_id) }
   end
 
 

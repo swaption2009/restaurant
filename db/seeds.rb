@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+plans = [
+    ["Small", 1, 10, 20, 5, 10],
+    ["Medium", 5, 50, 50, 10, 30],
+    ["Large", 10, 100, 50, 50, 50],
+]
+
+plans.each do |name, restorans, tables, menu_items, storage, price|
+  Plan.find_or_create_by!(name: name, restorans: restorans, tables: tables, menu_items: menu_items, storage: storage, price: price)
+end
