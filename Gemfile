@@ -50,3 +50,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'wicked'
 gem 'friendly_id'
+gem 'nested_form_fields'
