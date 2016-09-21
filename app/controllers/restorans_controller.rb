@@ -66,7 +66,7 @@ class RestoransController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_restoran
-      @restoran = Restoran.find(params[:id])
+      @restoran = Restoran.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

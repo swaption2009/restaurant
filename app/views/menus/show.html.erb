@@ -10,5 +10,13 @@
   <%= @menu.description %>
 </p>
 
+<h3>Items:</h3>
+<% @menu.items.each do |i|%>
+    <%= i.name %>
+    <%= i.description %>
+    <%= i.price %>
+<% end %>
+
+</br></br>
 <%= link_to 'Edit', edit_menu_path(@menu) %> |
 <%= link_to 'Back', menus_path %>
