@@ -4,7 +4,12 @@ class RestoransController < ApplicationController
   # GET /restorans
   # GET /restorans.json
   def index
-    @restorans = Restoran.all
+    @organization = current_user.organizations.first.name
+    if params[:id].present?
+      @restorans = @current_tenant.restorans.find(params[:id])
+    else
+      @restorans = Restoran.all
+    end
   end
 
   # GET /restorans/1
